@@ -1,55 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Université</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet</title>
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: auto;
-            padding: 20px;
-            background: #f4f4f9;
-            color: #333;
         }
+
+        .logo {
+            width: 70px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            border-radius: 30px;
+        }
+
         header {
-            text-align: center;
-            margin-bottom: 40px;
+            position: fixed;
+            top: 10px; /* un petit offset depuis le haut */
+            left: 50%;  /* centre horizontalement la boîte */
+            transform: translateX(-50%); /* décale la moitié vers la gauche pour centrer */
+            width: 600px; /* largeur fixe */
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            padding: 16px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 30px;
+            border: 2px solid #dce0e4;
+            box-sizing: border-box;
         }
-        h1 {
-            color: #007acc;
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
         }
-        section {
-            margin-bottom: 30px;
+
+        nav li {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
         }
-        footer {
-            text-align: center;
-            font-size: 0.8em;
-            color: #888;
-            margin-top: 50px;
-        }
-        .navbar {
-            background-color: #007acc;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+
+        nav a {
+            color: #1c5230;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 18px;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 4px;
+            display: inline-block;
         }
-        .nav-link:hover {
-            text-decoration: underline;
+
+        /* soulignement animé */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 2px;
+            right: 2px;
+            background-color: #1c5230;
+            visibility: hidden;
+            transition: all 0.2s ease-in-out;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            visibility: visible;
+            width: calc(100% - 4px);
         }
     </style>
 </head>
 <body>
-<nav class="navbar">
-    <a href="index.html" class="nav-link">Accueil</a>
-    <a href="stage.html" class="nav-link">Projets de stage</a>
-    <a href="universite.html" class="nav-link">Projets universitaires</a>
-</nav>
+
+<img src="./images/photo.jpg" alt="Logo" class="logo" id="logo">
+
+<header >
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-link active">Accueil</a></li>
+            <li><a href="stage.html" class="nav-link">Projets de stage</a></li>
+            <li><a href="universite.html" class="nav-link">Projets universitaires</a></li>
+        </ul>
+    </nav>
+</header>
+<br>
+<br>
+<br>
+<h1>Voici mes projets réalisés au cours de ma 3ème année de cursus universitaire à Belfort</h1>
+
+<script>
+    // Pour gérer le clic sur le logo : redirige vers l'accueil
+    document.getElementById('logo').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    // Pour gérer la classe active sur les liens en fonction de la page
+    const links = document.querySelectorAll('nav a');
+    const currentPath = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+        if(link.getAttribute('href') === currentPath || (currentPath === '' && link.getAttribute('href') === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>
+
 </body>
 </html>
