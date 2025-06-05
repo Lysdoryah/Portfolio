@@ -22,10 +22,4 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
     });
 
-    const logo = document.getElementById('logo');
-    if (logo) {
-        logo.addEventListener('click', () => {
-            window.location.href = 'index.html';
-        });
-    }
 });
