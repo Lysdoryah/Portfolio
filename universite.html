@@ -1,125 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projet</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .logo {
-            width: 70px;
-            cursor: pointer;
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-            border-radius: 30px;
-        }
-
-        header {
-            position: fixed;
-            top: 10px; /* un petit offset depuis le haut */
-            left: 50%;  /* centre horizontalement la boîte */
-            transform: translateX(-50%); /* décale la moitié vers la gauche pour centrer */
-            width: 600px; /* largeur fixe */
-            z-index: 999;
-            display: flex;
-            justify-content: center;
-            padding: 16px 0;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.75);
-            border-radius: 30px;
-            border: 2px solid #dce0e4;
-            box-sizing: border-box;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            width: 100%;
-        }
-
-        nav li {
-            cursor: pointer;
-            user-select: none;
-            position: relative;
-        }
-
-        nav a {
-            color: #1c5230;
-            font-weight: bold;
-            font-size: 18px;
-            text-decoration: none;
-            position: relative;
-            padding-bottom: 4px;
-            display: inline-block;
-        }
-
-        /* soulignement animé */
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 2px;
-            right: 2px;
-            background-color: #1c5230;
-            visibility: hidden;
-            transition: all 0.2s ease-in-out;
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            visibility: visible;
-            width: calc(100% - 4px);
-        }
-    </style>
+    <title>Projets Universitaires – Portfolio de Cécile Kuzniack</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<img src="./images/photo.jpg" alt="Logo" class="logo" id="logo">
+    <main>
+        <h1>Mes projets universitaires</h1>
 
-<header >
-    <nav>
-        <ul>
-            <li><a href="index.html" class="nav-link active">Accueil</a></li>
-            <li><a href="stage.html" class="nav-link">Projets de stage</a></li>
-            <li><a href="universite.html" class="nav-link">Projets universitaires</a></li>
-        </ul>
-    </nav>
-</header>
-<br>
-<br>
-<br>
-<h1>Voici mes projets réalisés au cours de ma 3ème année de cursus universitaire à Belfort</h1>
+        <section>
+            <h2>Site e-commerce fictif</h2>
+            <img src="images/projet-uni1.png" alt="Site e-commerce" style="width:100%;max-width:500px;" />
+            <p>
+                Création d’un site e-commerce en HTML/CSS/JS dans le cadre d’un projet de BUT. Il comprend une page
+                d’accueil, une fiche produit dynamique et un panier local.
+            </p>
+            <a href="https://github.com/cecilkuz/ecommerce-projet" target="_blank">Voir le code</a>
+        </section>
 
-<script>
-    // Pour gérer le clic sur le logo : redirige vers l'accueil
-    document.getElementById('logo').addEventListener('click', () => {
-        window.location.href = 'index.html';
-    });
+        <section>
+            <h2>Jeu interactif en JavaScript</h2>
+            <img src="images/projet-uni2.png" alt="Jeu JS" style="width:100%;max-width:500px;" />
+            <p>
+                Jeu de type quiz interactif codé en JavaScript pur. L'utilisateur répond à des questions et reçoit une
+                note finale, avec feedback animé.
+            </p>
+            <a href="https://github.com/cecilkuz/quiz-js" target="_blank">Voir le projet</a>
+        </section>
+    </main>
 
-    // Pour gérer la classe active sur les liens en fonction de la page
-    const links = document.querySelectorAll('nav a');
-    const currentPath = window.location.pathname.split('/').pop();
-
-    links.forEach(link => {
-        if(link.getAttribute('href') === currentPath || (currentPath === '' && link.getAttribute('href') === 'index.html')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-</script>
-
+    <script src="js/main.js"></script>
 </body>
+
 </html>
