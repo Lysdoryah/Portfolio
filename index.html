@@ -1,33 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio de Cécile Kuzniack</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Cécile Kuzniack</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
 </head>
 <body>
+    <header>
+        <img src="images/photo.jpg" alt="Logo" class="logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="stage.html" class="nav-link">Projets de stage</a></li>
+                <li><a href="universite.html" class="nav-link">Projets universitaires</a></li>
+                <li><button id="theme-toggle">🌓</button></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <h1>Bienvenue sur mon Portfolio</h1>
-    <p>Je suis étudiante en BUT Informatique - Développement Web</p>
+    <main>
+        <section>
+            <h1>Bienvenue sur mon Portfolio</h1>
+            <p>Étudiante en BUT Informatique (Développement Web & Applications)</p>
+        </section>
+    </main>
 
-    <section>
-        <h2>À propos de moi</h2>
-        <p>Étudiante passionnée par le développement front-end et la création d’interfaces accessibles. J’ai travaillé sur divers projets web en JavaScript, PHP, et React.</p>
-    </section>
-
-    <section>
-        <h2>Mes projets</h2>
-        <article>
-            <h3>Application de gestion</h3>
-            <img src="images/projet1.png" alt="Projet 1" style="width:100%;max-width:400px;" />
-            <p>Projet développé en React durant mon stage, avec une base de données Firebase.</p>
-            <a href="https://github.com/cecilkuz/projet1" target="_blank">Voir le code</a>
-        </article>
-    </section>
-</main>
-
-<script src="js/main.js"></script>
+    <footer>
+        © 2025 Cécile Kuzniack
+    </footer>
 </body>
 </html>
