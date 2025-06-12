@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,54 +12,91 @@
         <nav>
             <ul>
                 <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="apropos.html" class="nav-link">A propos de moi</a></li>
+                <li><a href="apropos.html" class="nav-link">À propos de moi</a></li>
                 <li><a href="stage.html" class="nav-link">Projets de stage</a></li>
                 <li><a href="universite.html" class="nav-link">Projets universitaires</a></li>
-                <li><button id="theme-toggle">🌓</button></li>
+                <li><button id="theme-toggle" aria-label="Changer le thème">🌓</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
-                    <h2>🧪 Projet Universitaire – Prédiction de la durée de conservation des pommes</h2>
-                    <p>
-                        Dans le cadre de ma 3<sup>e</sup> année de BUT Informatique, j'ai participé à un gros projet, en équipe de cing, visant à
-                        <strong>prédire la durée de conservation des pommes</strong> en fonction de leurs conditions de stockage.
-                        Ce projet mêle <strong>collecte de données, intelligence artificielle et développement web</strong>,
-                        et m’a permis de mobiliser de nombreux savoirs et savoir-faire dans des domaines variés.
-                    </p>
-
-                    <h3>🎯 Objectifs du projet</h3>
-                    <ul>
-                        <li>Collecter des données environnementales (température, humidité, O₂, CO₂) à l’aide de microcontrôleurs et de capteurs.</li>
-                        <li>Analyser la qualité des pommes à partir de photos enregistrées lors de leur sortie de réfrigération (forme, moisissures, imperfections).</li>
-                        <li>Prédire la durée de conservation restante et estimer le pourcentage de perte à l’aide d’une IA.</li>
-                    </ul>
-
-                    <h3>🛠️ Technologies & outils utilisés</h3>
-                    <ul>
-                        <li><strong>Microcontrôleurs & capteurs</strong> : pour la mesure des conditions de stockage.</li>
-                        <li><strong>Python & vision par ordinateur</strong> : pour analyser les photos et évaluer l’état des pommes.</li>
-                        <li><strong>MongoDB</strong> : pour stocker les données issues des capteurs et des analyses.</li>
-                        <li><strong>Node.js & Vue.js</strong> : pour le développement de l’interface utilisateur et la gestion des capteurs.</li>
-                    </ul>
-
-                    <h3>💡 Savoirs & savoir-faire développés</h3>
-                    <ul>
-                        <li>Conception d’architecture full-stack alliant capteurs, backend et frontend.</li>
-                        <li>Travail en équipe agile, coordination avec 4 autres étudiants, répartition des tâches et communication efficace.</li>
-                        <li>Analyse de données & traitement d’images avec Python.</li>
-                        <li>Déploiement d'une interface web dynamique pour suivre les conditions de stockage en temps réel.</li>
-                        <li>Gestion de projet technique : de la définition du besoin à la présentation finale.</li>
-                    </ul>
+            <h2>Projet Universitaire – Prédiction de la durée de conservation des pommes</h2>
+            <p>
+                Dans le cadre de ma 3<sup>e</sup> année de BUT Informatique, j’ai participé à un projet de groupe visant à 
+                <strong>prédire la durée de conservation des pommes</strong> en fonction de leurs conditions de stockage.  
+                Ce projet mêlait <strong>collecte de données, intelligence artificielle, conteneurisation et développement web</strong>, et m’a permis de mobiliser un large éventail de compétences.
+            </p>
         </section>
 
+        <section>
+            <h3>Objectifs du projet</h3>
+            <ul>
+                <li>Mesurer les conditions atmosphériques (température, humidité, O₂, CO₂) à l’aide de capteurs embarqués sur microcontrôleurs.</li>
+                <li>Analyser la qualité visuelle des pommes via des photos prises par une application mobile.</li>
+                <li>Prédire la durée de conservation et estimer les pertes grâce à une IA de classification.</li>
+                <li>Stocker et exploiter les données via une API accessible depuis une interface web.</li>
+            </ul>
+        </section>
 
+        <section>
+            <h3>Architecture du système</h3>
+            <p>Le schéma ci-dessous illustre l’architecture logicielle et matérielle du projet :</p>
+            <figure class="img">
+                <img src="images/Schema_SAE.png" alt="Schéma du projet pommes" title="Architecture générale du système" />
+                <figcaption>Figure 1 : Architecture du projet – Prédiction de conservation des pommes</figcaption>
+            </figure>
+            <p>
+                Le système repose sur plusieurs couches :
+            </p>
+            <ul>
+                <li><strong>Microcontrôleurs (Arduino)</strong> : collectent les données des capteurs de température, humidité, CO₂ et O₂.</li>
+                <li><strong>Serveur TCP (Java)</strong> : centralise les données en provenance des capteurs.</li>
+                <li><strong>Serveur média (Java)</strong> : reçoit les photos depuis l’application Android et les traite pour détecter des anomalies.</li>
+                <li><strong>Module IA (Python)</strong> : prédit la durée de conservation à partir des données collectées.</li>
+                <li><strong>Base de données (MongoDB)</strong> : conserve l’historique des données et des prédictions.</li>
+                <li><strong>API (Node.js)</strong> : permet l’accès aux données pour le front-end.</li>
+                <li><strong>Front-end (Vue.js)</strong> : interface web permettant la visualisation et l’interprétation des données.</li>
+                <li><strong>Conteneurisation (Docker)</strong> : facilite la mise en production de l’IA et de l’API.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Ma contribution personnelle</h3>
+            <ul>
+                <li><strong>Développement frontend :</strong> j’ai conçu l’interface utilisateur avec Vue.js permettant la visualisation en temps réel des conditions de stockage et des prédictions IA.</li>
+                <li><strong>API Backend :</strong> j’ai développé et documenté une API REST en Node.js pour exposer les données à l’interface web.</li>
+                <li><strong>Optimisation :</strong> j’ai travaillé sur les routes de l’API afin d’optimiser le temps d’affichage des données dans l’interface utilisateur.</li>
+                <li><strong>Dockerisation :</strong> j’ai conteneurisé le backend et le module d’IA pour assurer un déploiement fiable et reproductible.</li>
+                <li><strong>Rédaction technique :</strong> j’ai participé à la documentation du projet, notamment sur les aspects frontend, API et architecture générale.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Savoirs et savoir-faire développés</h3>
+            <ul>
+                <li>Conception d’une architecture <strong>IoT – API – IA – Web</strong> complète et conteneurisée.</li>
+                <li>Travail collaboratif en mode agile (suivi sur Trello, réunions régulières, pair programming).</li>
+                <li>Analyse de données temps réel et traitement d’images avec Python.</li>
+                <li>Développement frontend moderne avec Vue.js et intégration API REST.</li>
+                <li>Maîtrise de Docker pour déployer des environnements multi-services.</li>
+                <li>Rédaction claire de documentation technique orientée projet.</li>
+            </ul>
+        </section>
+
+        <section>
+            <p>
+                Ce projet a constitué une synthèse de mes compétences acquises en BUT Informatique.  
+                Il m’a permis d’explorer le développement full-stack, l’intégration de l’IA, la conteneurisation et la visualisation de données en temps réel.  
+                Grâce à cette expérience, j’ai confirmé mon intérêt pour les projets mêlant technologies web et systèmes intelligents.
+            </p>
+        </section>
     </main>
 
     <footer>
-        © 2025 Cécile Kuzniack
+        <p>© 2025 Cécile Kuzniack</p>
+        <img src="images/LOGO%20UMLP_VF_CMJN.png" alt="Logo Université" class="logo" id="logo" />
     </footer>
 </body>
 </html>
